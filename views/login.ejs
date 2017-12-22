@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="login-box">
+    <h4>后台系统   <a href="/register">没有账号，去注册</a></h4>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="col-sm-2 control-label">账号: </label>
+            <div class="col-sm-10">
+            <input type="email" class="form-control js_user" id="exampleInputEmail1" placeholder="请输入账号">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" class="col-sm-2 control-label">密码: </label>
+            <div class="col-sm-10">
+
+            <input type="password" class="form-control js_pwd" id="exampleInputPassword1" placeholder="请输入密码">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary js_login_btn">登录</button>
+    </form>
+</div>
+
+<script>
+    var $login_btn = $('.js_login_btn'),
+        $user = $('.js_user'),
+        $pwd = $('.js_pwd');
+    $login_btn.on('click', function (e) {
+        e.preventDefault()
+        if ($user.val() == '') {
+            alert('请输入账号');
+            return false;
+        }
+        if ($pwd.val() == '') {
+            alert('请输入密码');
+            return false;
+        }
+        $.ajax({
+            url: '/login/_data',
+            type: 'post',
+            data: {
+                user: $user.val(),
+                pwd: $pwd.val()
+            },
+            success: function (data) {
+                alert(data.message)
+                window.location.href = '/'
+            },
+            error: function () {
+
+            }
+        })
+    })
+</script>
+<%- include("./module/footer.ejs") %>

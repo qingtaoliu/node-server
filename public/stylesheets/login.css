@@ -1,0 +1,18 @@
+.login-box{
+    width: 400px;
+    height: 200px;
+    position: absolute ;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border:1px solid #e5e5e5;
+    padding: 15px;
+}
+.login-box h4 a{
+    float: right;
+    font-size: 14px;
+    color:#666;
+}
