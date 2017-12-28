@@ -1,0 +1,16 @@
+<!--html head-->
+<%- include("./module/head.ejs") %>
+<link rel="stylesheet" href="/stylesheets/article.css">
+<!--顶部公共区域-->
+<%- include("./module/header.ejs") %>
+
+<div class="content">
+    <h3>文章详情</h3>
+    <div>
+        <h4><%=data.title%></h4>
+        <p>作者：<%=data.author%> 时间：<%=data.create_time%></p>
+        <p class="article-content"><%=data.content%></p>
+
+    </div>
+</div>
+<%- include("./module/footer.ejs") %>

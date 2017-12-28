@@ -1,0 +1,46 @@
+<!--html head-->
+<%- include("./module/head.ejs") %>
+  <link rel="stylesheet" href="/stylesheets/article-list.css">
+  <!--顶部公共区域-->
+  <%- include("./module/header.ejs") %>
+
+    <div class="content">
+      <h3>
+文章列表
+</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>作者</th>
+            <th>标题</th>
+            <th>内容</th>
+            <th>创建时间</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% for ( var i=0;i<data.article_list.length;i++) { %>
+          <tr>
+            <th scope="row"><a href="/article/<%=data.article_list[i].id%>"><%=data.article_list[i].id%></a></th>
+            <td><%=data.article_list[i].author%></td>
+            <td><%=data.article_list[i].title%></td>
+            <td><%=data.article_list[i].content%></td>
+            <td><%=data.article_list[i].create_time%></td>
+          </tr>
+        <% } %>
+          <!-- <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr> -->
+        </tbody>
+      </table>
+    </div>
+<%- include("./module/footer.ejs") %>

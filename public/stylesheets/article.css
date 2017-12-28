@@ -1,0 +1,14 @@
+.content {
+    width: 1000px;
+    margin: 15px auto;
+}
+h4{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.article-content{
+    text-align: left;
+    text-indent: 10px;
+}

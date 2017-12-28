@@ -1,4 +1,13 @@
-
+<!--html head-->
+<%- include("./module/head.ejs") %>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<!--顶部公共区域-->
 <%- include("./module/header.ejs") %>
 
+<div class="content">
+    <div><a href="/login">登录</a></div>
+    <div><a href="/register">注册</a></div>
+    <div><a href="/article-list">文章列表</a></div>
+    <div><a href="/publish">发布文章</a></div>
+</div>
 <%- include("./module/footer.ejs") %>

@@ -25,11 +25,10 @@ app.post('*', function (req, res, next) {
     next();
 });
 //get 请求取用户名
-app.get('*', function (req, res) {
-    res.render('',{user_name: req.cookies.session_key, title: ''})
-})
+// app.get('*', function (req, res) {
+//     res.render('',{user_name: req.cookies.session_key, title: ''})
+// })
 app.use('/', index);
-
 
 
 
