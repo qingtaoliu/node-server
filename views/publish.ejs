@@ -1,0 +1,49 @@
+<!--html head-->
+<%- include("./module/head.ejs") %>
+<link rel="stylesheet" href="/stylesheets/publish.css">
+<!--顶部公共区域-->
+<%- include("./module/header.ejs") %>
+
+<div class="content">
+    <h3>发布文章</h3>
+    <div class="from-content">
+        <p>
+            文章标题 <input type="text" class="form-control js_article_title" placeholder="">
+        </p>
+        <p>
+            内容 <textarea class="form-control js_article_content" rows="3"></textarea>
+        </p>
+        <button type="submit" class="btn btn-primary js_submit_btn">提交</button>
+    </div>
+</div>
+<script>
+    var title = $('.js_article_title');
+    var content = $('.js_article_content');
+    $('.js_submit_btn').on('click', function () {
+        if (title.val() == '') {
+            alert('请输入标题');
+            return false;
+        }
+        if (content.val() == '') {
+            alert('请输入内容');
+            return false;
+        }
+        $.ajax({
+            url: '/publish/_data',
+            type: 'post',
+            data: {
+                title: title.val(),
+                content: content.val()
+            },
+            success: function (data) {
+                if (data.error == 0) {
+                    alert(data.message)
+                    window.location.href = '/article-list'
+                } else {
+                    alert(data.message)
+                }
+            }
+        })
+    })
+</script>
+<%- include("./module/footer.ejs") %>

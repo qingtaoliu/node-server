@@ -1,0 +1,29 @@
+.content{
+    width: 600px;
+    height: 600px;
+    margin:60px auto;
+}
+.content div{
+    width: 300px;
+    height: 200px;
+    float: left;
+    line-height: 200px;
+    text-align: center;
+}
+.content div a{
+    font-size: 40px;
+    color:#fff;
+    font-weight: 400;
+}
+.content div:first-child{
+    background: #68eae2;
+}
+.content div:nth-child(2){
+    background: #57f826;
+}
+.content div:nth-child(3){
+    background: #ed8eda;
+}
+.content div:last-child{
+    background: #fc2c17;
+}

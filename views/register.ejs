@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="login-box">
-    <h4>后台系统</h4>
+    <h4>my blog 注册</h4>
     <form class="form-horizontal">
         <div class="form-group">
             <label for="exampleInputEmail1" class="col-sm-2 control-label">账号: </label>
@@ -53,6 +53,7 @@
             },
             success: function (data) {
                 alert(data.message)
+                window.location.href = '/login'
             },
             error: function () {
 
